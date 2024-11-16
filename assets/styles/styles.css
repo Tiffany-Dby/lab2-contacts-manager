@@ -1,0 +1,229 @@
+:root {
+    /* COLORS */
+    --primary: rgb(88,161,165);
+    --secondary: rgb(215, 239, 236);
+    --tertiary: rgb(255,247,232);
+    --accent: rgb(255,120,147);
+    --black: rgb(9, 9, 9);
+    --white: rgb(254, 254, 254);
+    --primary-op5: rgba(88,161,165, 0.5);
+
+    /* FONTS */
+    --font-size-n: 1.6rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.img {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-n);
+    background-color: var(--tertiary);
+    color: var(--black);
+}
+
+main {
+    flex-grow: 1;
+}
+
+.header a, .footer a {
+    color: var(--tertiary);
+}
+
+a {
+    color: var(--primary);
+    transition: color .5s ease;
+
+    &:hover {
+        color: var(--black);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+}
+
+section {
+    padding: 1rem 0;
+}
+
+.header, .footer {
+    background-color: var(--primary);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__img {
+    max-width: 50px;
+}
+
+.form__wrapper, .contact-list__wrapper, .form, .form__inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__wrapper, .contact-list__wrapper {
+    gap: 2rem;
+}
+
+.form__wrapper {
+    max-width: 450px;
+    border-radius: .5rem;
+}
+
+.form {
+    gap: 1rem;
+}
+
+.form__inputs {
+    gap: .5rem;
+}
+
+.form__contact {
+    padding: 2rem 3rem;
+    background-color: var(--secondary);
+    box-shadow: 0 0 0 1px var(--primary), 4px 4px 3px 0 rgba(49, 92, 94, 0.25);
+}
+
+.input__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.input__wrapper:focus-within label {
+    color: var(--accent);
+}
+
+.input {
+    padding: .5rem;
+    border: 0;
+    box-shadow: 0 0 0 1px var(--primary);
+    border-radius: .25rem;
+    outline-color: var(--accent);
+    color: var(--primary);
+
+    &:focus {
+        box-shadow: 0 0 0 1px var(--accent);
+        color: var(--accent);
+    }
+}
+
+.input__label {
+    transition: color .3s ease;
+}
+
+.btn__wrapper {
+    display: flex;
+    justify-content: end;
+}
+
+.btn {
+    border: 0;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: background-color .5s ease;
+
+    &:hover {
+        background-color: var(--accent);
+    }
+}
+
+.contact-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contact-list tr, .contact-list th, .contact-list td {
+    text-align: left;
+    padding: 1rem;
+}
+
+.contact-list thead th {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.contact-list tbody tr {
+    background-color: var(--white);
+}
+
+.contact-list tbody:has(tr:hover) tr:not(:hover) {
+    opacity: .75;
+}
+
+.contact-list tbody td:last-child, .form__btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-list .btn {
+    text-decoration: none;
+
+    &:hover {
+        color: var(--white);
+    }
+}
+
+.contact-list tr:nth-child(even) {
+    background-color: var(--secondary);
+}
+
+.dialog {
+    width: 100%;
+    max-width: 250px;
+    min-height: 125px;
+    text-align: center;
+    border: 0;
+    border-radius: .5rem;
+    background-color: var(--tertiary);
+    box-shadow: 0 0 0 1px var(--primary);
+
+    &::backdrop {
+        background-color: rgba(0,0,0,.75);
+    }
+}
+
+.dialog__container .form {
+    gap: 4.5rem;
+}
+
+.footer {
+    text-align: center;
+}
